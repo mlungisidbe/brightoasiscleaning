@@ -3,6 +3,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+  // Force HTTPS: if somehow loaded over plain http (old link, bookmark, etc.),
+  // immediately redirect to the secure version of the same URL.
+  if (location.protocol === 'http:' && location.hostname !== 'localhost') {
+    location.replace('https://' + location.hostname + location.pathname + location.search + location.hash);
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get a Free Quote | Bright Oasis Cleaning Manchester</title>
 <meta name="description" content="Request a free cleaning quote from Bright Oasis Cleaning. Serving Manchester and the surrounding areas — regular cleans, deep cleans, end-of-tenancy and office cleaning.">
