@@ -4,7 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us — Bright Oasis Cleaning</title>
+<title>Get a Free Quote | Bright Oasis Cleaning Manchester</title>
+<meta name="description" content="Request a free cleaning quote from Bright Oasis Cleaning. Serving Manchester and the surrounding areas — regular cleans, deep cleans, end-of-tenancy and office cleaning.">
+<link rel="canonical" href="https://brightoasiscleaning.co.uk/contact.html">
 <style>
   :root{
     --navy:#0E3A5C;
@@ -85,6 +87,21 @@
   }
   .field textarea{resize:vertical; min-height:100px;}
   .row-2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .postcode-row{display:flex; gap:10px;}
+  .postcode-row input{flex:1;}
+  .lookup-btn{
+    flex:0 0 auto; background:#fff; color:var(--teal-deep); font-weight:600; font-size:13.5px;
+    border:1.5px solid var(--teal); border-radius:10px; padding:0 16px; cursor:pointer; font-family:inherit;
+    white-space:nowrap; transition:background .15s ease, color .15s ease;
+  }
+  .lookup-btn:hover{background:var(--teal); color:#fff;}
+  .lookup-btn:disabled{opacity:0.6; cursor:default;}
+  .hint.status-ok{color:var(--green); font-weight:600;}
+  .hint.status-error{color:var(--error); font-weight:600;}
+  @media (max-width: 480px){
+    .postcode-row{flex-direction:column;}
+    .lookup-btn{padding:12px 16px;}
+  }
   .hint{font-size:12.5px; color:var(--muted); margin-top:6px;}
   .error-text{font-size:12.5px; color:var(--error); margin-top:6px; display:none;}
   .field.invalid input, .field.invalid select, .field.invalid textarea{border-color:var(--error);}
@@ -184,32 +201,52 @@
           <p class="error-text">Please choose a date and time.</p>
         </div>
 
-        <div class="field" id="field-address">
-          <label for="address"><span class="q-num">3</span> Address</label>
-          <textarea id="address" name="address" placeholder="House/flat number, street, town, postcode" required></textarea>
-          <p class="error-text">Please add the address for the clean.</p>
+        <div class="field" id="field-postcode">
+          <label for="postcode"><span class="q-num">3</span> Postcode</label>
+          <div class="postcode-row">
+            <input type="text" id="postcode" name="postcode" placeholder="e.g. M1 1AE" autocomplete="postal-code" required>
+            <button type="button" class="lookup-btn" id="lookupBtn">Find address</button>
+          </div>
+          <p class="hint" id="postcodeStatus">We'll use this to fill in your town and county automatically.</p>
+          <p class="error-text">Please add a valid UK postcode.</p>
+        </div>
+
+        <div class="field" id="field-line1">
+          <label for="line1"><span class="q-num">4</span> House/flat number and street</label>
+          <input type="text" id="line1" name="line1" placeholder="e.g. 12 Oak Street" autocomplete="address-line1" required>
+          <p class="error-text">Please add your house number and street.</p>
+        </div>
+
+        <div class="field" id="field-townCounty">
+          <label><span class="q-num">5</span> Town and county</label>
+          <div class="row-2">
+            <input type="text" id="town" name="town" placeholder="Town/city" autocomplete="address-level2" required>
+            <input type="text" id="county" name="county" placeholder="County" autocomplete="address-level1">
+          </div>
+          <p class="hint">Filled in automatically once you look up your postcode — feel free to edit.</p>
+          <p class="error-text">Please add your town.</p>
         </div>
 
         <div class="field" id="field-email">
-          <label for="email"><span class="q-num">4</span> Email address</label>
+          <label for="email"><span class="q-num">6</span> Email address</label>
           <input type="email" id="email" name="email" placeholder="you@example.com" required>
           <p class="error-text">Please add a valid email address.</p>
         </div>
 
         <div class="field" id="field-phone">
-          <label for="phone"><span class="q-num">5</span> Phone number</label>
+          <label for="phone"><span class="q-num">7</span> Phone number</label>
           <input type="tel" id="phone" name="phone" placeholder="07000 000 000" required>
           <p class="error-text">Please add a phone number so we can reach you.</p>
         </div>
 
         <div class="field" id="field-name">
-          <label for="name"><span class="q-num">6</span> Name</label>
+          <label for="name"><span class="q-num">8</span> Name</label>
           <input type="text" id="name" name="name" placeholder="Your full name" required>
           <p class="error-text">Please tell us your name.</p>
         </div>
 
         <div class="field" id="field-instructions">
-          <label for="instructions"><span class="q-num">7</span> Anything we should know? <span class="optional">(optional)</span></label>
+          <label for="instructions"><span class="q-num">9</span> Anything we should know? <span class="optional">(optional)</span></label>
           <textarea id="instructions" name="instructions" placeholder="Pets, parking, access details, areas to focus on..."></textarea>
         </div>
 
@@ -220,7 +257,7 @@
 
         <div class="confirm-box" id="confirmBox">
           <h3>Thanks — almost done!</h3>
-          <p>Your email app should now be open with your details filled in. Just hit send and we'll be in touch within one business day. If nothing opened, email us directly at hello@brightoasiscleaning.com with the same details.</p>
+          <p>Your email app should now be open with your details filled in. Just hit send and we'll be in touch within one business day. If nothing opened, email us directly at contact@brightoasiscleaning.co.uk with the same details.</p>
         </div>
       </form>
     </div>
@@ -234,7 +271,7 @@
       <div class="side-card">
         <h3>Email us directly</h3>
         <p>We reply within one business day.</p>
-        <p><a href="mailto:hello@brightoasiscleaning.com">hello@brightoasiscleaning.com</a></p>
+        <p><a href="mailto:contact@brightoasiscleaning.co.uk">contact@brightoasiscleaning.co.uk</a></p>
       </div>
       <div class="side-card">
         <h3>What happens next?</h3>
@@ -245,7 +282,7 @@
 </div>
 
 <footer>
-  Bright Oasis Cleaning · hello@brightoasiscleaning.com · Mon–Sat, 9:00 AM–5:00 PM
+  Bright Oasis Cleaning · contact@brightoasiscleaning.co.uk · Mon–Sat, 9:00 AM–5:00 PM
 </footer>
 
 <script>
@@ -256,7 +293,9 @@
     { id: 'service', wrap: 'field-service' },
     { id: 'date', wrap: 'field-datetime' },
     { id: 'time', wrap: 'field-datetime' },
-    { id: 'address', wrap: 'field-address' },
+    { id: 'postcode', wrap: 'field-postcode' },
+    { id: 'line1', wrap: 'field-line1' },
+    { id: 'town', wrap: 'field-townCounty' },
     { id: 'email', wrap: 'field-email' },
     { id: 'phone', wrap: 'field-phone' },
     { id: 'name', wrap: 'field-name' },
@@ -265,6 +304,55 @@
   function clearErrors(){
     document.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
   }
+
+  // Postcode lookup — uses the free postcodes.io API to auto-fill town/county
+  // from a valid UK postcode. It doesn't return house-level addresses, so the
+  // house number/street is still typed in manually.
+  const lookupBtn = document.getElementById('lookupBtn');
+  const postcodeInput = document.getElementById('postcode');
+  const postcodeStatus = document.getElementById('postcodeStatus');
+  const townInput = document.getElementById('town');
+  const countyInput = document.getElementById('county');
+
+  async function lookupPostcode(){
+    const raw = postcodeInput.value.trim();
+    if (!raw) {
+      postcodeStatus.textContent = 'Enter a postcode first.';
+      postcodeStatus.className = 'hint status-error';
+      return;
+    }
+    const cleaned = raw.replace(/\s+/g, '');
+    lookupBtn.disabled = true;
+    lookupBtn.textContent = 'Looking up…';
+    postcodeStatus.className = 'hint';
+    postcodeStatus.textContent = 'Looking up your postcode…';
+    try {
+      const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(cleaned)}`);
+      const json = await res.json();
+      if (res.ok && json.result) {
+        const r = json.result;
+        townInput.value = r.admin_district || r.parish || '';
+        countyInput.value = r.admin_county || r.region || '';
+        postcodeInput.value = r.postcode;
+        postcodeStatus.textContent = 'Postcode found — town and county filled in below.';
+        postcodeStatus.className = 'hint status-ok';
+      } else {
+        postcodeStatus.textContent = "We couldn't find that postcode — double check it, or fill in town/county yourself.";
+        postcodeStatus.className = 'hint status-error';
+      }
+    } catch (err) {
+      postcodeStatus.textContent = "Couldn't reach the postcode lookup service — no problem, just fill in town/county yourself.";
+      postcodeStatus.className = 'hint status-error';
+    } finally {
+      lookupBtn.disabled = false;
+      lookupBtn.textContent = 'Find address';
+    }
+  }
+
+  lookupBtn.addEventListener('click', lookupPostcode);
+  postcodeInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); lookupPostcode(); }
+  });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -297,12 +385,18 @@
       service: document.getElementById('service').value,
       date: document.getElementById('date').value,
       time: document.getElementById('time').value,
-      address: document.getElementById('address').value.trim(),
+      line1: document.getElementById('line1').value.trim(),
+      town: document.getElementById('town').value.trim(),
+      county: document.getElementById('county').value.trim(),
+      postcode: document.getElementById('postcode').value.trim(),
       email: document.getElementById('email').value.trim(),
       phone: document.getElementById('phone').value.trim(),
       name: document.getElementById('name').value.trim(),
       instructions: document.getElementById('instructions').value.trim(),
     };
+
+    const addressParts = [data.line1, data.town, data.county, data.postcode].filter(Boolean);
+    const fullAddress = addressParts.join(', ');
 
     const subject = `Quote request: ${data.service} — ${data.name}`;
     const body =
@@ -310,13 +404,13 @@
 
 Service: ${data.service}
 Date & time: ${data.date} at ${data.time}
-Address: ${data.address}
+Address: ${fullAddress}
 Email: ${data.email}
 Phone: ${data.phone}
 Name: ${data.name}
 Instructions: ${data.instructions || '(none provided)'}`;
 
-    const mailto = `mailto:hello@brightoasiscleaning.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:contact@brightoasiscleaning.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
 
     confirmBox.classList.add('show');
